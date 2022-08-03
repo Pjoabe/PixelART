@@ -42,7 +42,7 @@ function coresSelecionaveis() {
 coresSelecionaveis();
 // função que cria quadrados de pixels (com outra função que cria os quadrados do pixel)
 function criaQuadradosDePixels() {
-  const quadro = document.createElement('div');
+  const quadro = document.createElement('section');
   quadro.id = 'pixel-board';
   quadro.style.width = '210px';
   quadro.style.height = '226px';
@@ -59,7 +59,9 @@ function criaQuadradosDePixels() {
   quadradosDePixel();
 }
 criaQuadradosDePixels();
+
 const paletaDeCores = document.getElementById('color-palette');
+
 // funçao que muda as cores.
 function mudaCores(cor) {
   const corSelecionada = document.querySelector('.selected');
@@ -67,3 +69,13 @@ function mudaCores(cor) {
   cor.target.classList.add('selected');
 }
 paletaDeCores.addEventListener('click', mudaCores);
+
+// função que cria botão que muda as cores.
+const quadradoDePIxels1 = document.getElementById('pixel-board');
+function corDoQuadrado(corClicada) {
+  const corEscolhida = document.querySelector('.selected');
+  if (corClicada.target.className === 'pixel') {
+    corClicada.target.style.backgroundColor = corEscolhida.style.backgroundColor;
+  }
+}
+quadradoDePIxels1.addEventListener('click', corDoQuadrado);
