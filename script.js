@@ -1,4 +1,4 @@
-// função que cria o titulo H1.
+// 1 função que cria o titulo H1.
 function criaTitulo() {
   const criaH1 = document.createElement('h1');
   criaH1.innerHTML = 'Paleta de Cores.';
@@ -6,14 +6,14 @@ function criaTitulo() {
   document.body.appendChild(criaH1);
 }
 criaTitulo();
-// função que adiciona a paleta de cores.
+// 2 função que adiciona a paleta de cores.
 function adicionaPaletaDeCores() {
   const criaSection = document.createElement('section');
   criaSection.id = 'color-palette';
   document.body.appendChild(criaSection);
 }
 adicionaPaletaDeCores();
-// função que adiciona cores a paleta de cores.
+// 3 função que adiciona cores a paleta de cores.
 function adicionaAsCores() {
   const mãeDasDivs = document.querySelector('#color-palette');
   for (let i = 0; i < 4; i += 1) {
@@ -28,7 +28,7 @@ function adicionaAsCores() {
   }
 }
 adicionaAsCores();
-// função que adiciona as cores selecionaveis a paleta de cores.
+// 4 função que adiciona as cores selecionaveis a paleta de cores.
 function coresSelecionaveis() {
   const preto = document.querySelector('#black');
   preto.style.backgroundColor = 'black';
@@ -40,7 +40,7 @@ function coresSelecionaveis() {
   green.style.backgroundColor = 'green';
 }
 coresSelecionaveis();
-// função que cria quadrados de pixels (com outra função que cria os quadrados do pixel)
+// 5 função que cria quadrados de pixels (com outra função que cria os quadrados do pixel)
 function criaQuadradosDePixels() {
   const quadro = document.createElement('section');
   quadro.id = 'pixel-board';
@@ -62,7 +62,7 @@ criaQuadradosDePixels();
 
 const paletaDeCores = document.getElementById('color-palette');
 
-// funçao que muda as cores.
+// 6 funçao que muda as cores.
 function mudaCores(cor) {
   const corSelecionada = document.querySelector('.selected');
   corSelecionada.classList.toggle('selected');
@@ -70,7 +70,7 @@ function mudaCores(cor) {
 }
 paletaDeCores.addEventListener('click', mudaCores);
 
-// função que cria botão que muda as cores.
+// 7 função que cria botão que muda as cores.
 const quadradoDePIxels1 = document.getElementById('pixel-board');
 function corDoQuadrado(corClicada) {
   const corEscolhida = document.querySelector('.selected');
@@ -79,3 +79,24 @@ function corDoQuadrado(corClicada) {
   }
 }
 quadradoDePIxels1.addEventListener('click', corDoQuadrado);
+// 8 função que cria um botão de limpar.
+function criaUmBotaoDeLimpar() {
+  const divMaeDoBotaoDeLimpar = document.createElement('div');
+  divMaeDoBotaoDeLimpar.className = 'div-Do-Limpa';
+  const botaoDeLimpar = document.createElement('button');
+  botaoDeLimpar.id = 'clear-board';
+  botaoDeLimpar.innerText = 'Limpar';
+  divMaeDoBotaoDeLimpar.appendChild(botaoDeLimpar);
+  quadradoDePIxels1.before(divMaeDoBotaoDeLimpar);
+}
+criaUmBotaoDeLimpar();
+
+const botaoQueLimpa = document.getElementById('clear-board');
+// 9 função que transforma o texto colorido em branco a partir do botão de limpar
+function fazALimpa() {
+  const quadradinhos = document.getElementsByClassName('pixel');
+  for (let i2 = 0; i2 < quadradinhos.length; i2 += 1) {
+    quadradinhos[i2].style.backgroundColor = 'white';
+  }
+}
+botaoQueLimpa.addEventListener('click', fazALimpa);
