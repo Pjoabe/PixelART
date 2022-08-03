@@ -15,10 +15,10 @@ function adicionaPaletaDeCores() {
 adicionaPaletaDeCores();
 // 3 função que adiciona cores a paleta de cores.
 function adicionaAsCores() {
-  const mãeDasDivs = document.querySelector('#color-palette');
+  const maeDasDivs = document.querySelector('#color-palette');
   for (let i = 0; i < 4; i += 1) {
     const criaDivs = document.createElement('div');
-    mãeDasDivs.appendChild(criaDivs);
+    maeDasDivs.appendChild(criaDivs);
     criaDivs.className = 'color';
     criaDivs.style.border = '1px solid black';
     if (i === 0) {
@@ -40,12 +40,12 @@ function coresSelecionaveis() {
   green.style.backgroundColor = 'green';
 }
 coresSelecionaveis();
-// 5 função que cria quadrados de pixels (com outra função que cria os quadrados do pixel)
+// 5 função que cria quadro de pixels (com outra função que cria os quadrados do pixel)
 function criaQuadradosDePixels() {
   const quadro = document.createElement('section');
   quadro.id = 'pixel-board';
   quadro.style.width = '210px';
-  quadro.style.height = '226px';
+  quadro.style.height = '210px';
   document.body.appendChild(quadro);
   function quadradosDePixel() {
     for (let indice = 0; indice < 25; indice += 1) {
@@ -65,7 +65,7 @@ const paletaDeCores = document.getElementById('color-palette');
 // 6 funçao que muda as cores.
 function mudaCores(cor) {
   const corSelecionada = document.querySelector('.selected');
-  corSelecionada.classList.toggle('selected');
+  corSelecionada.className += 'selected';
   cor.target.classList.add('selected');
 }
 paletaDeCores.addEventListener('click', mudaCores);
