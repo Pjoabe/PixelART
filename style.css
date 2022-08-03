@@ -1,3 +1,8 @@
+body{
+  background-image:url(https://i.pinimg.com/originals/8f/b7/ea/8fb7ea5d69fc4c1eec882a912498adb3.jpg);
+  background-color:cyan;
+  background-size:cover;
+}
 .pixel {
   background-color: white;
   height: 40px;
@@ -9,4 +14,22 @@
   width: 40px;
   height: 40px;
   display: inline-block;
+}
+#title{
+  color:rgb(214, 248, 248);
+  text-align: center;
+}
+#color-palette{
+  margin-left: 585px;
+}
+#pixel-board{
+  margin-left: 571px;
+}
+.div-Do-Limpa{
+justify-content: center;
+display: flex;
+width: 100%;
+}
+#clear-board{
+  color: white;
 }

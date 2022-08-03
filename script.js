@@ -32,12 +32,12 @@ adicionaAsCores();
 function coresSelecionaveis() {
   const preto = document.querySelector('#black');
   preto.style.backgroundColor = 'black';
-  const amarelo = document.getElementsByTagName('div')[1];
-  amarelo.style.backgroundColor = 'yellow';
-  const red = document.getElementsByTagName('div')[2];
-  red.style.backgroundColor = 'red';
-  const green = document.getElementsByTagName('div')[3];
-  green.style.backgroundColor = 'green';
+  const chartreuse = document.getElementsByTagName('div')[1];
+  chartreuse.style.backgroundColor = 'chartreuse';
+  const magenta = document.getElementsByTagName('div')[2];
+  magenta.style.backgroundColor = 'magenta';
+  const cyan = document.getElementsByTagName('div')[3];
+  cyan.style.backgroundColor = 'cyan';
 }
 coresSelecionaveis();
 // 5 função que cria quadro de pixels (com outra função que cria os quadrados do pixel)
