@@ -1,26 +1,61 @@
-const divCor1 = document.getElementsByClassName('color')[0];
-const divCor2 = document.getElementsByClassName('color')[1];
-const divCor3 = document.getElementsByClassName('color')[2];
-const divCor4 = document.getElementsByClassName('color')[3];
-divCor1.style.backgroundColor = 'black';
-divCor2.style.backgroundColor = 'red';
-divCor3.style.backgroundColor = 'yellow';
-divCor4.style.backgroundColor = 'blue';
-
-function criaASection() {
+// função que cria o titulo H1.
+function criaTitulo() {
+  const criaH1 = document.createElement('h1');
+  criaH1.innerHTML = 'Paleta de Cores.';
+  criaH1.id = 'title';
+  document.body.appendChild(criaH1);
+}
+criaTitulo();
+// função que adiciona a paleta de cores.
+function adicionaPaletaDeCores() {
   const criaSection = document.createElement('section');
-  criaSection.id = 'pixel-board';
-  criaSection.style.width = '226px';
-  criaSection.style.height = '210px';
+  criaSection.id = 'color-palette';
   document.body.appendChild(criaSection);
-  function criasAsDivs() {
-    for (let index = 0; index < 25; index += 1) {
-      const criaDiv = document.createElement('div');
-      criaDiv.className = 'pixel';
-      criaDiv.style.width = '40px';
-      criaSection.appendChild(criaDiv);
+}
+adicionaPaletaDeCores();
+// função que adiciona cores a paleta de cores.
+function adicionaAsCores() {
+  const mãeDasDivs = document.querySelector('#color-palette');
+  for (let i = 0; i < 4; i += 1) {
+    const criaDivs = document.createElement('div');
+    mãeDasDivs.appendChild(criaDivs);
+    criaDivs.className = 'color';
+    criaDivs.style.border = '1px solid black';
+    if (i === 0) {
+      criaDivs.id = 'black';
+      criaDivs.classList = 'color selected';
     }
   }
-  criasAsDivs();
 }
-criaASection();
+adicionaAsCores();
+// função que adiciona as cores selecionaveis a paleta de cores.
+function coresSelecionaveis() {
+  const preto = document.querySelector('#black');
+  preto.style.backgroundColor = 'black';
+  const amarelo = document.getElementsByTagName('div')[1];
+  amarelo.style.backgroundColor = 'yellow';
+  const red = document.getElementsByTagName('div')[2];
+  red.style.backgroundColor = 'red';
+  const green = document.getElementsByTagName('div')[3];
+  green.style.backgroundColor = 'green';
+}
+coresSelecionaveis();
+// função que cria quadrados de pixels.
+function criaQuadradosDePixels() {
+  const quadro = document.createElement('div');
+  quadro.id = 'pixel-board';
+  quadro.style.width = '210px';
+  quadro.style.height = '226px';
+  document.body.appendChild(quadro);
+  function quadradosDePixel() {
+    for (let indice = 0; indice < 25; indice += 1) {
+      const quadrados = document.createElement('div');
+      quadrados.className = 'pixel';
+      quadrados.style.width = '40px';
+      quadro.appendChild(quadrados);
+      quadrados.style.backgroundColor = 'white';
+    }
+  }
+  quadradosDePixel();
+}
+criaQuadradosDePixels();
